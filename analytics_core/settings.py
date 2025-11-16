@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "dashboard",
     "etl_pipeline",
     "telegram_bot",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
