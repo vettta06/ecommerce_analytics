@@ -21,9 +21,9 @@ from django.views.generic import RedirectView
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', RedirectView.as_view(url='/dashboard/')),
-    path('dashboard/', include('dashboard.urls')),
-    path('api/', include('etl_pipeline.urls')),  # API endpoints
-    path('bot/', include('telegram_bot.urls')),
+    path("admin/", admin.site.urls),
+    path("", RedirectView.as_view(url="/dashboard/")),
+    path("dashboard/", include("dashboard.urls")),
+    path("api/", include("etl_pipeline.urls")),  # API endpoints
+    path("bot/", include("telegram_bot.urls")),
 ]

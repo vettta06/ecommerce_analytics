@@ -2,9 +2,7 @@ from django.db import models
 
 
 class DataSource(models.Model):
-    """
-    Модель для хранения информации об источниках данных
-    """
+    """Модель для хранения информации об источниках данных."""
 
     name = models.CharField(max_length=100, verbose_name="Название источника")
     api_endpoint = models.URLField(verbose_name="API endpoint", blank=True)
@@ -24,9 +22,7 @@ class DataSource(models.Model):
 
 
 class Product(models.Model):
-    """
-    Модель товара для анализа продаж
-    """
+    """Модель товара для анализа продаж."""
 
     sku = models.CharField(max_length=100, unique=True, verbose_name="SKU")
     name = models.CharField(max_length=255, verbose_name="Название товара")
@@ -48,9 +44,7 @@ class Product(models.Model):
 
 
 class SalesData(models.Model):
-    """
-    Модель для хранения данных о продажах
-    """
+    """Модель для хранения данных о продажах."""
 
     product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name="Товар")
     date = models.DateField(verbose_name="Дата продажи")
@@ -84,9 +78,7 @@ class SalesData(models.Model):
 
 
 class DailyMetrics(models.Model):
-    """
-    Агрегированные метрики по дням для быстрого доступа
-    """
+    """Агрегированные метрики по дням для быстрого доступа."""
 
     date = models.DateField(unique=True, verbose_name="Дата")
     total_revenue = models.DecimalField(

@@ -138,7 +138,7 @@ class ETLService:
         return df
 
     def _aggregate_data(self, df):
-        """Агрегация данных для устранения дубликатов. Группирует данные по товару и дате."""
+        """Агрегация данных для устранения дубликатов."""
         aggregated = (
             df.groupby(["sku", "date", "product_name", "category", "price"])
             .agg({"quantity": "sum", "revenue": "sum"})
@@ -172,4 +172,3 @@ class ETLService:
                     },
                 )
         print("Агрегированные метрики обновлены")
-        

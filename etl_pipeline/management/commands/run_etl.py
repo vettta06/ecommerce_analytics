@@ -34,6 +34,6 @@ class Command(BaseCommand):
         try:
             elt_service = ETLService(source_name)
             elt_service.run_etl(start_date, end_date)
-            self.stdout.write(self.style.SUCCESS("ETL процесс успешно завершен!"))
+            self.stdout.write(self.style.SUCCESS("ETL процесс успешно завершен"))
         except Exception as e:
             self.stdout.write(self.style.ERROR(f"Ошибка в ETL процессе: {str(e)}"))

@@ -10,6 +10,11 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="/">📊 E-commerce Analytics</a>
+            <div class="navbar-nav">
+                <a class="nav-link active" href="/dashboard/">Главная</a>
+                <a class="nav-link" href="/dashboard/analytics/">Аналитика</a>
+                <a class="nav-link" href="/api/summary/" target="_blank">API</a>
+            </div>
         </div>
     </nav>
 
@@ -19,39 +24,89 @@
                 <div class="card">
                     <div class="card-body">
                         <h1 class="card-title">Добро пожаловать в Analytics Dashboard</h1>
-                        <p class="card-text">
-                            Это система аналитики для электронной коммерции с ETL-процессами и BI-визуализацией.
+                        <p class="card-text lead">
+                            BI-система для анализа данных электронной коммерции с ETL-процессами и интерактивной визуализацией.
                         </p>
+                        
+                        <!-- Быстрая статистика -->
                         <div class="row mt-4">
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="card text-white bg-primary">
                                     <div class="card-body">
-                                        <h5 class="card-title">Товары</h5>
-                                        <p class="card-text display-6">{{ total_products|default:"0" }}</p>
+                                        <h5 class="card-title">📦 Товаров</h5>
+                                        <p class="card-text display-6">{{ total_products }}</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="card text-white bg-success">
                                     <div class="card-body">
-                                        <h5 class="card-title">Продажи</h5>
-                                        <p class="card-text display-6">{{ total_sales|default:"0" }}</p>
+                                        <h5 class="card-title">💰 Продаж</h5>
+                                        <p class="card-text display-6">{{ total_sales }}</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="card text-white bg-info">
                                     <div class="card-body">
-                                        <h5 class="card-title">Метрики</h5>
-                                        <p class="card-text display-6">Активно</p>
+                                        <h5 class="card-title">📊 Выручка</h5>
+                                        <p class="card-text display-6">{{ total_revenue|floatformat:0 }} ₽</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card text-white bg-warning">
+                                    <div class="card-body">
+                                        <h5 class="card-title">🚀 Система</h5>
+                                        <p class="card-text display-6">Активна</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Описание возможностей -->
+                        <div class="row mt-5">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">🔧 Функциональность</h5>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">ETL-процессы сбора данных</li>
+                                            <li class="list-group-item">REST API для доступа к данным</li>
+                                            <li class="list-group-item">Интерактивные графики и дашборды</li>
+                                            <li class="list-group-item">Аналитика в реальном времени</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">📈 Аналитика</h5>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Динамика продаж по дням</li>
+                                            <li class="list-group-item">Топ товаров по выручке</li>
+                                            <li class="list-group-item">Распределение по категориям</li>
+                                            <li class="list-group-item">Ключевые метрики бизнеса</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Кнопки действий -->
                         <div class="mt-4">
-                            <a href="/dashboard/analytics/" class="btn btn-primary">Перейти к аналитике</a>
-                            <a href="/api/summary/" class="btn btn-outline-secondary">API</a>
-                            <a href="/admin/" class="btn btn-outline-dark">Админка</a>
+                            <a href="/dashboard/analytics/" class="btn btn-primary btn-lg">📊 Перейти к аналитике</a>
+                            <a href="/api/summary/" class="btn btn-outline-secondary btn-lg" target="_blank">🔗 API Документация</a>
+                            <a href="/admin/" class="btn btn-outline-dark btn-lg">⚙️ Админка</a>
+                        </div>
+
+                        <!-- Информация о системе -->
+                        <div class="mt-4">
+                            <small class="text-muted">
+                                Система разработана для демонстрации навыков BI-разработки. 
+                                Используются: Django, Django REST Framework, Chart.js, ETL-процессы.
+                            </small>
                         </div>
                     </div>
                 </div>

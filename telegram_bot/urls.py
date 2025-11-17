@@ -1,7 +1,4 @@
-from django.urls import path
-from . import views
-
-app_name = 'telegram_bot'
+app_name = "telegram_bot"
 
 urlpatterns = [
     # Пока оставляем пустым, добавим позже
